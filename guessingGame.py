@@ -21,7 +21,12 @@ correct_number = randint(2,9)
 guesses = 0
 
 while guesses < 3:
-	player_guess = int(input("=> "))
+	
+	try:
+		player_guess = int(input("=> "))
+	except:
+		prompt("ERROR: Enter a whole number" )
+		continue
 
 	if player_guess == correct_number:
 		prompt("You Win!")
